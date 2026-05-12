@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { isAuthenticated } from "@/utils/auth";
+import toast from "react-hot-toast";
 import { contactSections } from "@/data/contacts";
-
 import {
   FaSearch,
   FaUserTie,
@@ -12,6 +12,19 @@ import {
 export default function ContactPage() {
 
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+
+  // check auth
+  if (!isAuthenticated()) {
+
+    toast.error("Please login first");
+
+    window.location.href = "/login";
+
+    return;
+  }
+}, []);
 
   return (
     <main className="min-h-screen bg-[#f5f7f2] p-6">

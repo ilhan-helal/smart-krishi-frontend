@@ -146,13 +146,21 @@ useEffect(() => {
 
 const handleAnalyze = async () => {
 
-  if (!selectedImage) {
+  if (!uploadedImage) {
     return toast.error("Upload image first");
   }
 
   try {
 
-    setAnalyzing(true);
+   setAnalyzing(true);
+
+// clear previous result first
+setAiResult(null);
+
+// small delay so React re-render force ho
+await new Promise((resolve) =>
+  setTimeout(resolve, 300)
+);
 
     const token = localStorage.getItem("token");
 
@@ -165,7 +173,7 @@ const handleAnalyze = async () => {
         },
       }
     );
-
+    console.log(response.data.analysis);
     setAiResult(response.data.analysis);
 
     toast.success("AI analysis completed");
@@ -435,9 +443,12 @@ const handleClearAnalysis = () => {
                 <FaRupeeSign className="text-green-600" />
                 Mandi Rates
               </h2>
-              <button className="text-green-600 font-semibold text-sm hover:underline flex items-center gap-1">
-                View All <FaExchangeAlt size={12} />
-              </button>
+              <Link
+  href="/allmandi"
+  className="text-green-600 font-semibold cursor-pointer hover:underline text-lg"
+>
+  View All
+</Link>
             </div>
 
             {/* Mobile: Cards view, Desktop: Table view */}
@@ -606,6 +617,7 @@ const handleClearAnalysis = () => {
 
   {/* AI RESULT */}
 {aiResult && (
+  <div key={aiResult.analysisId}>
 
   <div className="bg-white rounded-2xl p-8 shadow-md mt-8 border border-green-100">
 
@@ -705,7 +717,7 @@ const handleClearAnalysis = () => {
       </button>
 
     </div>
-
+    </div>
   </div>
 )}
 

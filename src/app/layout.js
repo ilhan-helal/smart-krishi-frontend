@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Smart Krishi Sahayak",
   description: "AI-powered agriculture support, real-time market insights, weather intelligence, expert guidance, and smart farming solutions — all integrated into one digital platform.",
+  icons: {
+    icon: "/favicon.jpg",
+  },
 };
 
 export default function RootLayout({ children }) {
