@@ -487,63 +487,92 @@ officers: [
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-green-50 to-white">
-      {/* Language Switcher - Fixed Top Right */}
-      <div className="fixed top-3 right-2 sm:top-4 sm:right-4 z-50 flex gap-1 sm:gap-2 bg-white/90 backdrop-blur rounded-full shadow-md p-1 scale-90 sm:scale-100">
+ 
+
+      {/* Navigation Bar */}
+<nav className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-40">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div className="flex items-center justify-between h-16">
+      
+      {/* Logo */}
+      <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="bg-green-600 p-2 rounded-lg">
+          <FaLeaf className="text-white text-xl" />
+        </div>
+
+        <span className="font-bold text-lg lg:text-2xl text-green-800 whitespace-nowrap">
+          Smart Krishi Sahayak
+        </span>
+      </div>
+
+      {/* Desktop Menu */}
+      <div className="hidden md:flex items-center gap-6 lg:gap-8">
+        <a
+          href="#"
+          className="text-gray-700 hover:text-green-600 font-medium transition"
+        >
+          {t.nav.home}
+        </a>
+
+        <a
+          href="#features"
+          className="text-gray-700 hover:text-green-600 font-medium transition"
+        >
+          {t.nav.features}
+        </a>
+
+        <a
+          href="#news"
+          className="text-gray-700 hover:text-green-600 font-medium transition"
+        >
+          {t.nav.news}
+        </a>
+
+        <a
+          href="#officials"
+          className="text-gray-700 hover:text-green-600 font-medium transition"
+        >
+          {t.nav.officials}
+        </a>
+
+        <a
+          href="#guide"
+          className="text-gray-700 hover:text-green-600 font-medium transition"
+        >
+          {t.nav.guide}
+        </a>
+      </div>
+
+      {/* Language Switcher */}
+      <div className="flex items-center bg-green-50 rounded-full p-1 shadow-sm flex-shrink-0">
+        
         <button
           onClick={() => setLanguage("en")}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-1 ${
+          className={`px-3 lg:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-1 ${
             language === "en"
-              ? "bg-green-600 text-white shadow-md"
-              : "text-gray-600 hover:bg-green-100"
+              ? "bg-green-600 text-white shadow"
+              : "text-gray-700 hover:bg-green-100"
           }`}
         >
-          <FaGlobe size={14} /> English
+          <FaGlobe size={13} />
+          <span className="hidden sm:inline">English</span>
         </button>
+
         <button
           onClick={() => setLanguage("hi")}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+          className={`px-3 lg:px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
             language === "hi"
-              ? "bg-green-600 text-white shadow-md"
-              : "text-gray-600 hover:bg-green-100"
+              ? "bg-green-600 text-white shadow"
+              : "text-gray-700 hover:bg-green-100"
           }`}
         >
           हिंदी
         </button>
       </div>
-
-      {/* Navigation Bar */}
-      <nav className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 gap-2">
-            <div className="flex items-center gap-2">
-              <div className="bg-green-600 p-2 rounded-lg">
-                <FaLeaf className="text-white text-xl" />
-              </div>
-              <span className="font-bold text-sm sm:text-xl text-green-800 whitespace-nowrap">
-                Smart Krishi Sahayak
-              </span>
-            </div>
-            <div className="hidden md:flex items-center gap-6">
-              <a href="#" className="text-gray-700 hover:text-green-600 font-medium">
-                {t.nav.home}
-              </a>
-              <a href="#features" className="text-gray-700 hover:text-green-600 font-medium">
-                {t.nav.features}
-              </a>
-              <a href="#news" className="text-gray-700 hover:text-green-600 font-medium">
-                {t.nav.news}
-              </a>
-              <a href="#officials" className="text-gray-700 hover:text-green-600 font-medium">
-                {t.nav.officials}
-              </a>
-              <a href="#guide" className="text-gray-700 hover:text-green-600 font-medium">
-                {t.nav.guide}
-              </a>
-              
-            </div>
-          </div>
-        </div>
-      </nav>
+    </div>
+  </div>
+</nav>
 
       {/* Hero Section - Full Screen Image Slider */}
 <section className="relative h-screen min-h-[600px] overflow-hidden">
