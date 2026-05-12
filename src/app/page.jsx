@@ -18,6 +18,7 @@ import {
   FaTwitter,
   FaFacebook,
   FaYoutube,
+  FaPhone,
   FaChevronRight,
   FaCheckCircle,
   FaQuoteLeft,
@@ -108,9 +109,9 @@ useEffect(() => {
             desc: "Hyper-local forecasts and pest/disease warnings.",
           },
           {
-            icon: <FaWhatsapp />,
+            icon: <FaPhone />,
             title: "Expert Support",
-            desc: "Connect with agriculture experts via WhatsApp/call.",
+            desc: "Connect with agriculture experts via Call.",
           },
         ],
       },
@@ -182,7 +183,7 @@ officers: [
         ],
       },
       testimonials: {
-        title: "Trusted by 2M+ Farmers",
+        title: "Trusted by 2K+ Farmers",
         subtitle: "Real stories from our farming community",
         items: [
           {
@@ -286,9 +287,9 @@ officers: [
             desc: "हाइपर-लोकल पूर्वानुमान और कीट/रोग चेतावनी।",
           },
           {
-            icon: <FaWhatsapp />,
+            icon: <FaPhone />,
             title: "विशेषज्ञ सहायता",
-            desc: "व्हाट्सएप/कॉल के माध्यम से कृषि विशेषज्ञों से जुड़ें।",
+            desc: "कॉल के माध्यम से कृषि विशेषज्ञों से जुड़ें।",
           },
         ],
       },
@@ -487,7 +488,7 @@ officers: [
   return (
     <main className="min-h-screen bg-gradient-to-b from-green-50 to-white">
       {/* Language Switcher - Fixed Top Right */}
-      <div className="fixed top-4 right-4 z-50 flex gap-2 bg-white/90 backdrop-blur rounded-full shadow-md p-1">
+      <div className="fixed top-3 right-2 sm:top-4 sm:right-4 z-50 flex gap-1 sm:gap-2 bg-white/90 backdrop-blur rounded-full shadow-md p-1 scale-90 sm:scale-100">
         <button
           onClick={() => setLanguage("en")}
           className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-1 ${
@@ -513,12 +514,12 @@ officers: [
       {/* Navigation Bar */}
       <nav className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-evenly items-center h-16">
+          <div className="flex justify-between items-center h-16 gap-2">
             <div className="flex items-center gap-2">
               <div className="bg-green-600 p-2 rounded-lg">
                 <FaLeaf className="text-white text-xl" />
               </div>
-              <span className="font-bold text-xl text-green-800">
+              <span className="font-bold text-sm sm:text-xl text-green-800 whitespace-nowrap">
                 Smart Krishi Sahayak
               </span>
             </div>
@@ -609,7 +610,7 @@ officers: [
       {/* Stats Badge */}
       <div className="mt-12 inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
         <FaCheckCircle className="text-green-400" />
-        <span className="text-white text-sm font-semibold">Trusted by 2M+ Farmers</span>
+        <span className="text-white text-sm font-semibold">Trusted by 2K+ Farmers</span>
       </div>
     </div>
   </div>
@@ -635,7 +636,7 @@ officers: [
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-green-600">2M+</div>
+              <div className="text-3xl md:text-4xl font-bold text-green-600">2K+</div>
               <div className="text-gray-600 mt-1">{t.stats.farmers}</div>
             </div>
             <div>
@@ -899,10 +900,11 @@ officers: [
             </svg>
             <span>Available 24/7 • Mon-Sun • 6 AM to 10 PM</span>
           </div>
-          
+          <Link href="/contact">
           <button className="bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
             Call Now
           </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -1031,9 +1033,6 @@ officers: [
 
           <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center gap-2">
 
-            <span className="text-green-600 text-xl">
-              +
-            </span>
 
             {item.question}
 
@@ -1076,9 +1075,9 @@ officers: [
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-green-400">
+                  <Link href="/contact" className="hover:text-green-400">
                     Contact
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="hover:text-green-400">
@@ -1091,19 +1090,19 @@ officers: [
               <h3 className="text-white font-semibold mb-4">{t.footer.support}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="hover:text-green-400">
+                  <Link href="/contact" className="hover:text-green-400">
                     Help Center
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-green-400">
+                  <a href="/coming-soon" className="hover:text-green-400">
                     Farmer Support
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-green-400">
+                  <Link href="/contact" className="hover:text-green-400">
                     Kisan Call Center
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

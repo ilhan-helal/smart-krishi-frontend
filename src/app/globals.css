@@ -61,3 +61,36 @@ body {
 .animate-slide-up-delayed-2 {
   animation: slide-up 0.8s ease-out 0.6s both;
 }
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-group {
+  display: flex;
+  gap: 16px;
+  padding-right: 16px;
+}
+
+.marquee-card {
+  min-width: 180px;
+  flex-shrink: 0;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  font-weight: 600;
+  color: #374151;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

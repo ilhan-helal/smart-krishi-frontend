@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import API from "@/services/api";
 import toast from "react-hot-toast";
 import { isAuthenticated } from "@/utils/auth";
+import Link from "next/link";
 
 import {
   FaCloudSun,
@@ -17,9 +18,16 @@ import {
   FaCalendarAlt,
   FaMapMarkerAlt,
   FaMobileAlt,
+  FaPhone,
   FaWhatsapp,
   FaBell,
   FaUserCircle,
+  FaFacebook,
+  FaTwitter,
+  FaYoutube,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaHeart,
   FaSearch,
   FaExchangeAlt,
 } from "react-icons/fa";
@@ -199,7 +207,10 @@ const handleClearAnalysis = () => {
 
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-green-50 to-green-100/30 pb-20">
+    <main className="min-h-screen bg-fixed bg-cover bg-center relative" 
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1573119798379-011dfedae008?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      }}>
       
       {/* MOBILE HEADER - Visible only on mobile */}
       <div className="lg:hidden bg-white shadow-sm sticky top-0 z-50">
@@ -238,7 +249,7 @@ const handleClearAnalysis = () => {
             <button
               onClick={() => {
                 localStorage.removeItem("token");
-                window.location.href = "/login";
+                window.location.href = "/";
               }}
               className="w-full text-left p-4 text-red-600 font-semibold hover:bg-red-50"
             >
@@ -271,7 +282,7 @@ const handleClearAnalysis = () => {
               <button
                 onClick={() => {
                   localStorage.removeItem("token");
-                  window.location.href = "/login";
+                  window.location.href = "/";
                 }}
                 className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg transition-all duration-300"
               >
@@ -698,33 +709,173 @@ const handleClearAnalysis = () => {
   </div>
 )}
 
-        {/* QUICK ACTIONS - Mobile friendly */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8">
-          <button className="bg-white p-3 sm:p-4 rounded-xl text-center hover:shadow-md transition-all">
-            <div className="bg-green-100 p-2 rounded-lg inline-block mb-2">
-              <FaWhatsapp className="text-green-600 text-xl" />
-            </div>
-            <p className="text-xs sm:text-sm font-semibold text-gray-700">Expert Help</p>
-          </button>
-          <button className="bg-white p-3 sm:p-4 rounded-xl text-center hover:shadow-md transition-all">
-            <div className="bg-blue-100 p-2 rounded-lg inline-block mb-2">
-              <FaCloudSun className="text-blue-600 text-xl" />
-            </div>
-            <p className="text-xs sm:text-sm font-semibold text-gray-700">Weather Alert</p>
-          </button>
-          <button className="bg-white p-3 sm:p-4 rounded-xl text-center hover:shadow-md transition-all">
-            <div className="bg-purple-100 p-2 rounded-lg inline-block mb-2">
-              <FaChartLine className="text-purple-600 text-xl" />
-            </div>
-            <p className="text-xs sm:text-sm font-semibold text-gray-700">Market Trends</p>
-          </button>
-          <button className="bg-white p-3 sm:p-4 rounded-xl text-center hover:shadow-md transition-all">
-            <div className="bg-yellow-100 p-2 rounded-lg inline-block mb-2">
-              <FaMobileAlt className="text-yellow-600 text-xl" />
-            </div>
-            <p className="text-xs sm:text-sm font-semibold text-gray-700">Offline Mode</p>
-          </button>
-        </div>
+        {/* QUICK ACTIONS MARQUEE */}
+<div className="mt-6 sm:mt-8 overflow-hidden">
+
+  <div className="marquee-track">
+
+    {/* FIRST SET */}
+    <div className="marquee-group">
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-green-100 p-2 rounded-lg inline-block mb-2">
+        <FaPhone className="text-green-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Expert Help
+      </p>
+
+    </div>
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-blue-100 p-2 rounded-lg inline-block mb-2">
+        <FaCloudSun className="text-blue-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Weather Alert
+      </p>
+
+    </div>
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-purple-100 p-2 rounded-lg inline-block mb-2">
+        <FaChartLine className="text-purple-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Market Trends
+      </p>
+
+    </div>
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-yellow-100 p-2 rounded-lg inline-block mb-2">
+        <FaMobileAlt className="text-yellow-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Offline Mode
+      </p>
+
+    </div>
+
+    </div>
+
+    {/* SECOND SET (EXACT DUPLICATE) */}
+    <div className="marquee-group">
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-green-100 p-2 rounded-lg inline-block mb-2">
+        <FaPhone className="text-green-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Expert Help
+      </p>
+
+    </div>
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-blue-100 p-2 rounded-lg inline-block mb-2">
+        <FaCloudSun className="text-blue-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Weather Alert
+      </p>
+
+    </div>
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-purple-100 p-2 rounded-lg inline-block mb-2">
+        <FaChartLine className="text-purple-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Market Trends
+      </p>
+
+    </div>
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-yellow-100 p-2 rounded-lg inline-block mb-2">
+        <FaMobileAlt className="text-yellow-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Offline Mode
+      </p>
+
+    </div>
+
+    </div>
+
+    {/* THIRD SET (EXACT DUPLICATE) */}
+    <div className="marquee-group">
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-green-100 p-2 rounded-lg inline-block mb-2">
+        <FaPhone className="text-green-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Expert Help
+      </p>
+
+    </div>
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-blue-100 p-2 rounded-lg inline-block mb-2">
+        <FaCloudSun className="text-blue-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Weather Alert
+      </p>
+
+    </div>
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-purple-100 p-2 rounded-lg inline-block mb-2">
+        <FaChartLine className="text-purple-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Market Trends
+      </p>
+
+    </div>
+
+      <div className="min-w-[180px] bg-white p-4 rounded-xl text-center hover:shadow-md transition-all border">
+
+      <div className="bg-yellow-100 p-2 rounded-lg inline-block mb-2">
+        <FaMobileAlt className="text-yellow-600 text-xl" />
+      </div>
+
+      <p className="text-sm font-semibold text-gray-700">
+        Offline Mode
+      </p>
+
+    </div>
+
+    </div>
+
+  </div>
+
+</div>
 
       </div>
 
@@ -747,7 +898,100 @@ const handleClearAnalysis = () => {
           <span className="text-xs mt-1">Profile</span>
         </button>
       </div>
-      
+      {/* FOOTER SECTION */}
+        <footer className="bg-gray-900/95 backdrop-blur-sm text-gray-400 mt-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              
+              {/* Company Info */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="bg-green-600 p-2 rounded-lg">
+                    <FaLeaf className="text-white" />
+                  </div>
+                  <span className="font-bold text-xl text-white">
+                    Smart Krishi Sahayak
+                  </span>
+                </div>
+                <p className="text-sm text-gray-400 mb-4">
+                  Empowering Indian farmers with AI-driven insights, real-time mandi prices, and expert agricultural guidance.
+                </p>
+                <div className="flex gap-3">
+                  <a href="#" className="hover:text-green-400 transition-colors">
+                    <FaFacebook size={20} />
+                  </a>
+                  <a href="#" className="hover:text-green-400 transition-colors">
+                    <FaTwitter size={20} />
+                  </a>
+                  <a href="#" className="hover:text-green-400 transition-colors">
+                    <FaYoutube size={20} />
+                  </a>
+                  <a href="#" className="hover:text-green-400 transition-colors">
+                    <FaWhatsapp size={20} />
+                  </a>
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div>
+                <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="/" className="hover:text-green-400 transition-colors">About Us</a></li>
+                  <li><a href="#features" className="hover:text-green-400 transition-colors">Features</a></li>
+                  <li><a href="/contact" className="hover:text-green-400 transition-colors">Government Officials</a></li>
+                  <li><a href="/coming-soon" className="hover:text-green-400 transition-colors">Privacy Policy</a></li>
+                  <li><a href="/coming-soon" className="hover:text-green-400 transition-colors">Terms of Service</a></li>
+                </ul>
+              </div>
+
+              {/* Support */}
+              <div>
+                <h3 className="text-white font-semibold text-lg mb-4">Farmer Support</h3>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center gap-2">
+                    <FaPhoneAlt size={14} />
+                    <a href="tel:18001801551" className="hover:text-green-400 transition-colors">1800-180-1551 (Toll Free)</a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaEnvelope size={14} />
+                    <a href="mailto:support@krishisahayak.com" className="hover:text-green-400 transition-colors">support@krishisahayak.com</a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaPhone size={14} />
+                    <a href="/contact" className="hover:text-green-400 transition-colors">Support</a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Newsletter */}
+              <div>
+                <h3 className="text-white font-semibold text-lg mb-4">Stay Updated</h3>
+                <p className="text-sm text-gray-400 mb-3">
+                  Get latest agriculture news and mandi rates directly in your inbox.
+                </p>
+                <div className="flex">
+                  <input 
+                    type="email" 
+                    placeholder="Your email" 
+                    className="flex-1 px-3 py-2 rounded-l-lg text-gray-800 focus:outline-none"
+                  />
+                  <Link href="/coming-soon">
+                  <button className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-r-lg text-white transition-colors">
+                    Subscribe
+                  </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="border-t border-gray-800 mt-10 pt-8 text-center text-sm">
+              <p>© 2026 Smart Krishi Sahayak. All rights reserved. Made for Indian Farmers</p>
+              <p className="text-xs text-gray-500 mt-2">An initiative to empower agriculture through technology</p>
+            </div>
+          </div>
+        </footer>
+        
     </main>
   );
 }
