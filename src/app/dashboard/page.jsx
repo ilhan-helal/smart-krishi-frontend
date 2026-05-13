@@ -27,6 +27,7 @@ import {
   FaYoutube,
   FaPhoneAlt,
   FaEnvelope,
+  FaRobot,
   FaHeart,
   FaSearch,
   FaExchangeAlt,
@@ -1003,6 +1004,14 @@ const handleClearAnalysis = () => {
             </div>
           </div>
         </footer>
+
+        {/* FLOATING CHATBOT BUTTON */}
+<Link
+  href="/chatbot"
+  className="fixed bottom-24 right-6 z-50 bg-green-600 hover:bg-green-700 text-white p-5 rounded-full shadow-2xl transition-all duration-300 animate-bounce"
+>
+  <FaRobot className="text-3xl" />
+</Link>
         
     </main>
   );
