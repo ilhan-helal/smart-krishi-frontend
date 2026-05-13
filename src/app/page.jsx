@@ -307,24 +307,28 @@ officers: [
             name: "शिवराज सिंह चौहान",
             position: "केंद्रीय मंत्री",
             department: "कृषि एवं किसान कल्याण",
+             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_tPfcnIsStIgDtmLSzA0hhiUqFBEbDSj-cg&s",
             responsibility: "समग्र नीति दिशा और किसान कल्याण",
           },
           {
             name: "भागीरथ चौधरी",
             position: "राज्य मंत्री",
             department: "कृषि एवं किसान कल्याण",
+            image: "https://www.khabredinraat.com/wp-content/uploads/2024/06/mantri.jpg",
             responsibility: "कृषि विस्तार और किसान संपर्क",
           },
           {
             name: "अतीश चंद्र",
             position: "कृषि सचिव",
             department: "कृषि मंत्रालय",
+            image: "https://apacnewsnetwork.com/wp-content/uploads/2026/03/News123.webp",
             responsibility: "प्रशासनिक प्रमुख और नीति कार्यान्वयन",
           },
           {
             name: "चिन्मय पी. गोटमारे (IAS)",
             position: "संयुक्त सचिव",
             department: "कृषि विभाग",
+            image: "https://witnessinthecorridors.com/ImgNewsPolitical/260101175357915.png",
             responsibility: "नीति समन्वय और योजना कार्यान्वयन",
           },
         ],
@@ -629,7 +633,7 @@ officers: [
           {t.hero.cta1}
         </Link>
         <Link
-          href="/login"
+          href="https://youtu.be/HuIaB5uZ1no?si=mZwargo46nYw1ixJ"
           className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-2 border-white px-8 py-3 rounded-xl font-semibold transition-all duration-300"
         >
           {t.hero.cta2}
